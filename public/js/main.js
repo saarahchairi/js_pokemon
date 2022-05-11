@@ -65,9 +65,9 @@ class Pikachu extends Pokemon{
         }
     }
 }
-let niveauPerso = Math.floor(Math.random()*(99-1))+1;
+let niveauPersoPika = Math.floor(Math.random()*(99-1))+1;
 
-let pika = new Pikachu("Pikachu", niveauPerso, 100, 50,["eclair"]);
+let pika = new Pikachu("Pikachu", niveauPersoPika, 100, 50,["eclair"]);
 
 class Carapuce extends Pokemon {
     constructor(nom, niveau, vie, vitesse, type){
@@ -126,5 +126,25 @@ class Carapuce extends Pokemon {
         }
     }
 }
+let niveauPersoCara = Math.floor(Math.random()*(99-1))+1;
 
-let cara = new Carapuce("Carapuce", niveauPerso, 50, ["eau"]);
+let cara = new Carapuce("Carapuce", niveauPersoCara, 100, 20, ["eau"]);
+
+console.log(pika);
+console.log(cara);
+
+function combat () {
+    console.log("Bonjour et bienvenue dans ce jeu. Afin de commencer la partie, veillez choisir votre personnage");
+    let joueur = prompt(`Souahites-tu jouer avec ${pika.nom} ou ${cara.nom}?`);
+    switch (joueur) {
+        case "pikachu":
+            console.log(`Tu as décidé de jouer avec ${pika.nom}`);
+            break;
+        case "carapuce":
+            console.log(`Tu as décidé de jouer avec ${cara.nom}`);
+            break;
+        default:
+            break;
+    }
+}
+combat()
