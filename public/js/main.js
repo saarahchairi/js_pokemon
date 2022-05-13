@@ -16,8 +16,11 @@ class Pikachu extends Pokemon {
                 case "eau":
                     ennemi.vie -= 20
                     break;
-                case "sol":
+                case "poisson":
                     ennemi.vie -= 10
+                    break;
+                case "sol":
+                    ennemi.vie -= 3
                     break;
                 default:
                     ennemi.vie -= 5
@@ -29,8 +32,11 @@ class Pikachu extends Pokemon {
                 case "eau":
                     ennemi.vie -= 10
                     break;
-                case "sol":
+                case "poisson":
                     ennemi.vie -= 5
+                    break;
+                case "sol":
+                    ennemi.vie -= 3
                     break;
                 default:
                     ennemi.vie -= 1
@@ -42,8 +48,11 @@ class Pikachu extends Pokemon {
                 case "eau":
                     ennemi.vie -= 5
                     break;
-                case "sol":
+                case "poisson":
                     ennemi.vie -= 0
+                    break;
+                case "sol":
+                    ennemi.vie -= 3
                     break;
                 default:
                     ennemi.vie -= 2
@@ -55,8 +64,11 @@ class Pikachu extends Pokemon {
                 case "eau":
                     ennemi.vie -= 8
                     break;
-                case "sol":
+                case "poisson":
                     ennemi.vie -= 4
+                    break;
+                case "sol":
+                    ennemi.vie -= 3
                     break;
                 default:
                     ennemi.vie -= 1
@@ -79,6 +91,9 @@ class Carapuce extends Pokemon {
                 case "eclair":
                     ennemi.vie -= 20
                     break;
+                case "poisson":
+                    ennemi.vie -= 15
+                    break;
                 case "sol":
                     ennemi.vie -= 10
                     break;
@@ -92,8 +107,11 @@ class Carapuce extends Pokemon {
                 case "eclair":
                     ennemi.vie -= 10
                     break;
-                case "sol":
+                case "poisson":
                     ennemi.vie -= 5
+                    break;
+                case "sol":
+                    ennemi.vie -= 10
                     break;
                 default:
                     ennemi.vie -= 1
@@ -104,6 +122,9 @@ class Carapuce extends Pokemon {
             switch (ennemi.type) {
                 case "eclair":
                     ennemi.vie -= 6
+                    break;
+                case "poisson":
+                    ennemi.vie -= 1
                     break;
                 case "sol":
                     ennemi.vie -= 3
@@ -118,8 +139,11 @@ class Carapuce extends Pokemon {
                 case "eclair":
                     ennemi.vie -= 8
                     break;
-                case "sol":
+                case "poisson":
                     ennemi.vie -= 4
+                    break;
+                case "sol":
+                    ennemi.vie -= 3
                     break;
                 default:
                     ennemi.vie -= 1
@@ -141,8 +165,11 @@ class Onix extends Pokemon {
                 case "eclair":
                     ennemi.vie -= 20
                     break;
-                case "eau":
+                case "poisson":
                     ennemi.vie -= 10
+                    break;
+                case "eau":
+                    ennemi.vie -= 15
                     break;
                 default:
                     ennemi.vie -= 5
@@ -153,6 +180,9 @@ class Onix extends Pokemon {
             switch (ennemi.type) {
                 case "eclair":
                     ennemi.vie -= 10
+                    break;
+                case "poisson":
+                    ennemi.vie -= 8
                     break;
                 case "eau":
                     ennemi.vie -= 5
@@ -167,8 +197,11 @@ class Onix extends Pokemon {
                 case "eclair":
                     ennemi.vie -= 6
                     break;
-                case "eau":
+                case "poisson":
                     ennemi.vie -= 3
+                    break;
+                case "eau":
+                    ennemi.vie -= 4
                     break;
                 default:
                     ennemi.vie -= 2
@@ -180,8 +213,11 @@ class Onix extends Pokemon {
                 case "eclair":
                     ennemi.vie -= 8
                     break;
-                case "eau":
+                case "poisson":
                     ennemi.vie -= 4
+                    break;
+                case "eau":
+                    ennemi.vie -= 6
                     break;
                 default:
                     ennemi.vie -= 1
@@ -194,8 +230,82 @@ let niveauPersoOni = Math.floor(Math.random() * (99 - 1)) + 1;
 
 let oni = new Onix("Onix", niveauPersoOni, 10, 40, ["sol"]);
 
+//Création de la classe et du personnage smogo
+class Smogo extends Pokemon {
+    constructor(nom, niveau, vie, vitesse, type) {
+        super(nom, niveau, vie, vitesse, type);
+        this.explosion = (ennemi) => {
+            switch (ennemi.type) {
+                case "eclair":
+                    ennemi.vie -= 20
+                    break;
+                case "eau":
+                    ennemi.vie -= 15
+                    break;
+                case "sol":
+                    ennemi.vie -= 10
+                    break;
+                default:
+                    ennemi.vie -= 5
+                    break;
+            }
+        }
+        this.brouillard = (ennemi) => {
+            switch (ennemi.type) {
+                case "eclair":
+                    ennemi.vie -= 10
+                    break;
+                case "eau":
+                    ennemi.vie -= 5
+                    break;
+                case "sol":
+                    ennemi.vie -= 8
+                    break;
+                default:
+                    ennemi.vie -= 1
+                    break;
+            }
+        }
+        this.pure_de_poid = (ennemi) => {
+            switch (ennemi.type) {
+                case "eclair":
+                    ennemi.vie -= 6
+                    break;
+                case "eau":
+                    ennemi.vie -= 3
+                    break;
+                case "sol":
+                    ennemi.vie -= 5
+                    break;
+                default:
+                    ennemi.vie -= 2
+                    break;
+            }
+        }
+        this.destruction = (ennemi) => {
+            switch (ennemi.type) {
+                case "eclair":
+                    ennemi.vie -= 8
+                    break;
+                case "eau":
+                    ennemi.vie -= 4
+                    break;
+                case "sol":
+                    ennemi.vie -= 6
+                    break;
+                default:
+                    ennemi.vie -= 1
+                    break;
+            }
+        }
+    }
+}
+let niveauPersoSmo = Math.floor(Math.random() * (99 - 1)) + 1;
+
+let smo = new Smogo("Smogo", niveauPersoSmo, 10, 20, ["poisson"]);
+
 //Tableau des joueurs afin de séléctionner un combattant de manière aléatoire
-let combattant = [pika, cara, oni];
+let combattant = [pika, cara, oni, smo];
 let combattantAleatoire = combattant[Math.floor(Math.random() * combattant.length)];
 
 function combat() {
@@ -206,7 +316,7 @@ function combat() {
 
     //Boucle qui permets de choisir le personnage que l'utilisateur aura choisi
     while (poke === null) {
-        choix = prompt(`Souahites-tu jouer avec ${pika.nom}, ${cara.nom} ou ${oni.nom}?`);
+        choix = prompt(`Souahites-tu jouer avec ${pika.nom}, ${cara.nom}, ${oni.nom} ou ${smo.nom}?`);
         joueur = choix.charAt(0).toUpperCase() + choix.slice(1);
         for (let i = 0; i < combattant.length; i++) {
             const element = combattant[i];
@@ -250,7 +360,7 @@ function combat() {
                 }
                 alert(`${combattantAleatoire.nom} a encore ${combattantAleatoire.vie} points de vie`)
             } else if (poke.nom === "Carapuce") {
-                let choixAttaque = prompt(`Quelle attaque souhaites-tu? (Attention, le nom de l'attaque doit bien être orthographié!): pistolet à eau / morsure / vibraqua / écume`);
+                let choixAttaque = prompt(`Quelle attaque souhaites-tu? (Attention, le nom de l'attaque doit bien être orthographié!): pistolet à eau / morsure / vibraqua / étrainte`);
                 switch (choixAttaque) {
                     case "pistolet à eau":
                         alert(`Tu as choisi ${choixAttaque} comme attaque`);
@@ -264,9 +374,9 @@ function combat() {
                         alert(`Tu as choisi ${choixAttaque} comme attaque`);
                         cara.vibraqua(combattantAleatoire);
                         break;
-                    case "écume":
+                    case "étrainte":
                         alert(`Tu as choisi ${choixAttaque} comme attaque`);
-                        cara.ecume(combattantAleatoire);
+                        cara.etrainte(combattantAleatoire);
                         break;
                     default:
                         break;
@@ -290,6 +400,29 @@ function combat() {
                     case "étreinte":
                         alert(`Tu as choisi ${choixAttaque} comme attaque`);
                         oni.etreinte(combattantAleatoire);
+                        break;
+                    default:
+                        break;
+                }
+                alert(`${combattantAleatoire.nom} a encore ${combattantAleatoire.vie} points de vie`)
+            } else if (poke.nom === "Smogo") {
+                let choixAttaque = prompt(`Quelle attaque souhaites-tu? (Attention, le nom de l'attaque doit bien être orthographié!): explosion / brouillard / puré de poid / destruction`);
+                switch (choixAttaque) {
+                    case "explosion":
+                        alert(`Tu as choisi ${choixAttaque} comme attaque`);
+                        smo.explosion(combattantAleatoire);
+                        break;
+                    case "brouillard":
+                        alert(`Tu as choisi ${choixAttaque} comme attaque`);
+                        smo.brouillard(combattantAleatoire);
+                        break;
+                    case "puré de poid":
+                        alert(`Tu as choisi ${choixAttaque} comme attaque`);
+                        smo.pure_de_poid(combattantAleatoire);
+                        break;
+                    case "destruction":
+                        alert(`Tu as choisi ${choixAttaque} comme attaque`);
+                        smo.destruction(combattantAleatoire);
                         break;
                     default:
                         break;
@@ -322,7 +455,7 @@ function combat() {
                 alert(`${poke.nom}, tu a encore ${poke.vie} points de vie`)
 
             } else if (combattantAleatoire.nom === "Carapuce") {
-                let tableauAttaqueCara = ["pistolet", "morsure", "vibraqua", "ecume"]
+                let tableauAttaqueCara = ["pistolet", "morsure", "vibraqua", "étrainte"]
                 let attaqueAleatoireCara = tableauAttaqueCara[Math.floor(Math.random() * tableauAttaqueCara.length)];
                 switch (attaqueAleatoireCara) {
                     case "pistolet":
@@ -337,9 +470,9 @@ function combat() {
                         cara.vibraqua(poke);
                         alert(`${combattantAleatoire.nom} vous a attaqué avec vibraqua.`);
                         break;
-                    case "ecume":
-                        cara.ecume(poke);
-                        alert(`${combattantAleatoire.nom} vous a attaqué avec écume.`);
+                    case "étrainte":
+                        cara.etrainte(poke);
+                        alert(`${combattantAleatoire.nom} vous a attaqué avec étrainte.`);
                         break;
                 }
                 alert(`${poke.nom}, tu a encore ${poke.vie} points de vie`)
@@ -365,6 +498,30 @@ function combat() {
                         break;
                 }
                 alert(`${poke.nom}, tu a encore ${poke.vie} points de vie`)
+            } else if (combattantAleatoire.nom === "Smogo") {
+                let tableauAttaqueSmo = ["explosion", "brouillard", "puré de poid", "destruction"]
+                let attaqueAleatoireSmo = tableauAttaqueSmo[Math.floor(Math.random() * tableauAttaqueSmo.length)];                
+                switch (attaqueAleatoireSmo) {
+                    case "explosion":
+                        smo.explosion(poke);
+                        alert(`${combattantAleatoire.nom} vous a attaqué avec explosion.`);
+                        break;
+                    case "brouillard":
+                        smo.brouillard(poke);
+                        alert(`${combattantAleatoire.nom} vous a attaqué avec brouillard.`);
+                        break;
+                    case "puré de poid":
+                        smo.pure_de_poid(poke);
+                        alert(`${combattantAleatoire.nom} vous a attaqué avec puré de poid.`);
+                        break;
+                    case "destruction":
+                        smo.destruction(poke);
+                        alert(`${combattantAleatoire.nom} vous a attaqué avec destruction.`);
+                        break;
+                    default:
+                        break;
+                }
+                alert(`${combattantAleatoire.nom} a encore ${combattantAleatoire.vie} points de vie`)
             }
         }
         if (poke.vitesse > combattantAleatoire.vitesse) {
@@ -393,7 +550,7 @@ function combat() {
                 alert(`${poke.nom}, tu a encore ${poke.vie} points de vie`)
 
             } else if (combattantAleatoire.nom === "Carapuce") {
-                let tableauAttaqueCara = ["pistolet", "morsure", "vibraqua", "ecume"]
+                let tableauAttaqueCara = ["pistolet", "morsure", "vibraqua", "étrainte"]
                 let attaqueAleatoireCara = tableauAttaqueCara[Math.floor(Math.random() * tableauAttaqueCara.length)];
                 switch (attaqueAleatoireCara) {
                     case "pistolet":
@@ -408,9 +565,9 @@ function combat() {
                         cara.vibraqua(poke);
                         alert(`${combattantAleatoire.nom} vous a attaqué avec vibraqua`);
                         break;
-                    case "ecume":
-                        cara.ecume(poke);
-                        alert(`${combattantAleatoire.nom} vous a attaqué avec écume`);
+                    case "étrainte":
+                        cara.etrainte(poke);
+                        alert(`${combattantAleatoire.nom} vous a attaqué avec étrainte`);
                         break;
                 }
                 alert(`${poke.nom}, tu a encore ${poke.vie} points de vie`)
@@ -436,6 +593,30 @@ function combat() {
                         break;
                 }
                 alert(`${poke.nom}, tu a encore ${poke.vie} points de vie`)
+            } else if (combattantAleatoire.nom === "Smogo") {
+                let tableauAttaqueSmo = ["explosion", "brouillard", "puré de poid", "destruction"]
+                let attaqueAleatoireSmo = tableauAttaqueSmo[Math.floor(Math.random() * tableauAttaqueSmo.length)];                
+                switch (attaqueAleatoireSmo) {
+                    case "explosion":
+                        smo.explosion(poke);
+                        alert(`${combattantAleatoire.nom} vous a attaqué avec explosion.`);
+                        break;
+                    case "brouillard":
+                        smo.brouillard(poke);
+                        alert(`${combattantAleatoire.nom} vous a attaqué avec brouillard.`);
+                        break;
+                    case "puré de poid":
+                        smo.pure_de_poid(poke);
+                        alert(`${combattantAleatoire.nom} vous a attaqué avec puré de poid.`);
+                        break;
+                    case "destruction":
+                        smo.destruction(poke);
+                        alert(`${combattantAleatoire.nom} vous a attaqué avec destruction.`);
+                        break;
+                    default:
+                        break;
+                }
+                alert(`${combattantAleatoire.nom} a encore ${combattantAleatoire.vie} points de vie`)
             }
         } else {
             alert(`${poke.nom} c'est à ton tour de lancer une attaque!`);
@@ -463,7 +644,7 @@ function combat() {
                 }
                 alert(`${combattantAleatoire.nom}, tu a encore ${combattantAleatoire.vie} points de vie`)
             } else if (poke.nom === "Carapuce") {
-                let choixAttaque = prompt(`Quelle attaque souhaites-tu? (Attention, le nom de l'attaque doit bien être orthographié!): pistolet à eau / morsure / vibraqua / écume`);
+                let choixAttaque = prompt(`Quelle attaque souhaites-tu? (Attention, le nom de l'attaque doit bien être orthographié!): pistolet à eau / morsure / vibraqua / étrainte`);
                 switch (choixAttaque) {
                     case "pistolet à eau":
                         alert(`Tu as choisi ${choixAttaque} comme attaque`);
@@ -477,9 +658,9 @@ function combat() {
                         alert(`Tu as choisi ${choixAttaque} comme attaque`);
                         cara.vibraqua(combattantAleatoire);
                         break;
-                    case "écume":
+                    case "étrainte":
                         alert(`Tu as choisi ${choixAttaque} comme attaque`);
-                        cara.ecume(combattantAleatoire);
+                        cara.etrainte(combattantAleatoire);
                         break;
                     default:
                         break;
@@ -508,9 +689,38 @@ function combat() {
                         break;
                 }
                 alert(`${combattantAleatoire.nom} a encore ${combattantAleatoire.vie} points de vie`)
+            } else if (poke.nom === "Smogo") {
+                let choixAttaque = prompt(`Quelle attaque souhaites-tu? (Attention, le nom de l'attaque doit bien être orthographié!): explosion / brouillard / puré de poid / destruction`);
+                switch (choixAttaque) {
+                    case "explosion":
+                        alert(`Tu as choisi ${choixAttaque} comme attaque`);
+                        smo.explosion(combattantAleatoire);
+                        break;
+                    case "brouillard":
+                        alert(`Tu as choisi ${choixAttaque} comme attaque`);
+                        smo.brouillard(combattantAleatoire);
+                        break;
+                    case "puré de poid":
+                        alert(`Tu as choisi ${choixAttaque} comme attaque`);
+                        smo.pure_de_poid(combattantAleatoire);
+                        break;
+                    case "destruction":
+                        alert(`Tu as choisi ${choixAttaque} comme attaque`);
+                        smo.destruction(combattantAleatoire);
+                        break;
+                    default:
+                        break;
+                }
+                alert(`${combattantAleatoire.nom} a encore ${combattantAleatoire.vie} points de vie`)
             }
         }
     }
-    while (poke.vie <= 0 && combattantAleatoire.vie <= 0);
+    while (poke.vie >= 0 && combattantAleatoire.vie >= 0);
+    
+    if(poke.vie <=0){
+        alert(`${poke.nom} tu as perdu!`);
+    } else{
+        alert(`${combattantAleatoire.nom} tu as perdu!`);
+    }
 }
-combat()
+// combat()
